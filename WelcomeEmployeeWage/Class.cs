@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace WelcomeEmployeeWage
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderObject Mahindra = new EmpWageBuilderObject("Mahindra", 20, 20, 100);
-            EmpWageBuilderObject Accenture = new EmpWageBuilderObject("Accenture", 30, 25, 120);
-            Mahindra.computeEmpWage();
-            Console.WriteLine(Mahindra.toString());
-            Accenture.computeEmpWage();
-            Console.WriteLine(Accenture.ToString());
+            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            empWageBuilder.AddCompanyEmpWage("Mahindra", 20, 20, 100);
+            empWageBuilder.AddCompanyEmpWage("Accenture", 30, 25, 120);
+            empWageBuilder.computeEmpWage();
+            Console.ReadLine();
+
 
         }
     }
