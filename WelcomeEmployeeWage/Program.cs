@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace WelcomeEmployeeWage
 {
-    class UC5_Calculating_Wages_for_a_Month
+    class UC6_Calculating_Wages_of_100days_or_20Days_reached
     {
         public const int isFullTime = 1;     // Constants
         public const int isPartTime = 2;     // Constants
         public const int empRatePerHour = 20;    // Constants
         public const int numOfWorkingDays = 20;     //Constants
-
+        public const int maxHrsInMonth = 100;   // Constants
 
         static void Main(string[] args)
         {
             int empHrs = 0;     // varibles
-            int empWage = 0;    // varibles
-            int totalEmpWage = 0;   // Varibles
-            for (int day = 0; day < numOfWorkingDays; day++) // Using for loop 
+            int totalEmpHrs = 0;    // varibles
+            int totalWorkingDays = 0;   // Varibles
+            while(empHrs <= maxHrsInMonth && totalWorkingDays < numOfWorkingDays)   //Using While loop
             {
+                totalWorkingDays++; // using increment Condition
                 Random random = new Random();   // Instantiate random number generator using supplied value as seed.
                 int empCheck = random.Next(0, 3);    // Generate 3 random integer values(0,1,2)
                 switch (empCheck)      // using Switch Statement
@@ -35,10 +36,10 @@ namespace WelcomeEmployeeWage
                         empHrs = 0;
                         break;
                 }
-                empWage = empHrs * empRatePerHour;
-                totalEmpWage += empWage;
-                Console.WriteLine("Emp Wage : " + empWage);
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Day#:" + totalWorkingDays + " Emp Hrs: " + empHrs);
             }
+            int totalEmpWage = totalEmpHrs * empRatePerHour;
             Console.WriteLine("Total Employee Wage : " + totalEmpWage);
         } 
     }
