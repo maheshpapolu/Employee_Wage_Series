@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace WelcomeEmployeeWage
 {
-    class UC6_Calculating_Wages_of_100days_or_20Days_reached
+    class UC7_Compute_Employee_Wage_Using_Class_Methods
     {
         public const int isFullTime = 1;     // Constants
         public const int isPartTime = 2;     // Constants
         public const int empRatePerHour = 20;    // Constants
         public const int numOfWorkingDays = 20;     //Constants
         public const int maxHrsInMonth = 100;   // Constants
-
-        static void Main(string[] args)
-        {
+        public static void  computeEmpWage() 
+        { 
             int empHrs = 0;     // varibles
             int totalEmpHrs = 0;    // varibles
             int totalWorkingDays = 0;   // Varibles
@@ -42,6 +41,10 @@ namespace WelcomeEmployeeWage
             int totalEmpWage = totalEmpHrs * empRatePerHour;
             Console.WriteLine("Total Employee Wage : " + totalEmpWage);
         } 
+        static void Main(string[] args) 
+        {
+            computeEmpWage();
+        }
     }
 
 }
